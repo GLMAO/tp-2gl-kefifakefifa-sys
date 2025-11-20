@@ -4,22 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestionnaireEmploiDuTemps {
-    private List<ICours> listeCours = new ArrayList<>();
+    private List<Cours> listeCours = new ArrayList<>();
 
-    public void ajouterCours(ICours cours) {
-        this.listeCours.add(cours);
-        System.out.println("Nouveau cours ajouté : " + cours.getDescription());
-        // TODO: C'est ici qu'il faudrait notifier les étudiants (Observer pattern)
+    // Ajouter un cours
+    public void ajouterCours(Cours c) {
+        listeCours.add(c);
+        System.out.println("Nouveau cours ajouté : " + c);
     }
 
-    public void modifierCours(ICours cours, String message) {
-        // Logique de modification...
-        System.out.println("Cours modifié : " + message);
-        // TODO: Notifier les observateurs ici aussi
+    // Afficher l'emploi du temps
+    public void afficherEmploiDuTemps() {
+        System.out.println("=== Emploi du Temps ===");
+        if (listeCours.isEmpty()) {
+            System.out.println("Aucun cours pour l'instant.");
+        } else {
+            for (Cours c : listeCours) {
+                System.out.println("- " + c);
+            }
+        }
     }
 
-    public void setChangement(String string) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setChangement'");
+    // Supprimer un cours par nom (optionnel)
+    public void supprimerCours(String nom) {
+        listeCours.removeIf(c -> c.getNom().equalsIgnoreCase(nom));
+        System.out.println("Cours supprimé : " + nom);
     }
 }

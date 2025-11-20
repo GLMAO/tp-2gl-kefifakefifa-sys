@@ -1,39 +1,39 @@
 package com.polytech.tp;
 
-public class Cours implements ICours {
-    private String matiere;
-    private String enseignant;
-    private String salle;
-    private String date;
-    private String heureDebut;
-    private boolean estOptionnel;
-    private String niveau;
-    private boolean necessiteProjecteur;
+public class Cours {
+    private String nom;
+    private int duree;
 
-    
-    public Cours(String matiere, String enseignant, String salle, String date, 
-                 String heureDebut, boolean estOptionnel, String niveau, boolean necessiteProjecteur) {
-        this.matiere = matiere;
-        this.enseignant = enseignant;
-        this.salle = salle;
-        this.date = date;
-        this.heureDebut = heureDebut;
-        this.estOptionnel = estOptionnel;
-        this.niveau = niveau;
-        this.necessiteProjecteur = necessiteProjecteur;
+    public Cours(String nom, int duree) {
+        this.nom = nom;
+        this.duree = duree;
+    }
+
+    public Cours(String matiere, String enseignant, String salle, String date, String heureDebut, boolean estOptionnel,
+            String niveau, boolean necessiteProjecteur) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public int getDuree() {
+        return duree;
     }
 
     @Override
-    public String getDescription() {
-        return "Cours de " + matiere + " avec " + enseignant + " (" + salle + ")";
+    public String toString() {
+        return nom + " (" + duree + "h)";
     }
 
-    @Override
-    public double getDuree() {
-        return 1.5; 
+    public Object getEnseignant() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getEnseignant'");
     }
-    
-    
-    public String getMatiere() { return matiere; }
-    public String getEnseignant() { return enseignant; }
+
+    public Object getMatiere() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMatiere'");
+    }
 }

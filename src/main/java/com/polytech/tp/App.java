@@ -1,4 +1,4 @@
-package com.polytech;
+package com.polytech.tp;
 
 /**
  * Hello world!
